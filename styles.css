@@ -113,7 +113,6 @@
     }
 
     .nav-item.active::before {
-        content: '•';
         position: absolute;
         left: 10px;
         font-size: 1.5rem;
@@ -257,7 +256,7 @@
   .game-media {
     width: 100%;
     height: 0;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     position: relative;
     overflow: hidden;
   }
@@ -447,20 +446,50 @@
         
         .sidebar {
             width: 100%;
-            height: auto;
+            height: 30%;
             position: relative;
             padding: 1rem;
+        }
+        .company-name span {
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
         }
         
         .logo-container {
             margin-bottom: 1rem;
+            align-self: center;
         }
         
         .main-nav {
             font-family: 'Dokdo';
             flex-direction: row;
             justify-content: center;
-            margin-top: 1rem;
+            margin-top: -5.5rem; /* Change from 1rem to a negative value */
+            position: relative; /* Add positioning context */
+            z-index: 10; /* Ensure it appears above other elements */
+        }
+
+        .games-container {
+            align-items: center;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .game-card {
+            width: 80%; 
+            margin: 0 auto; /* Center the cards */
+        }
+        
+        /* Center the heading */
+        .content-section h1 {
+            text-align: center;
+        }
+        
+        /* Add some padding to the content section */
+        .content {
+            padding: 1rem;
+            width: 100%;
         }
 
         .main-nav span {
@@ -468,7 +497,13 @@
         }
         
         .social-links {
-            margin-top: 1rem;
+            display: flex;
+            gap: 1rem; /* Reduced from 1.5rem for tighter positioning */
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 15; /* Ensure they appear above other elements */
+            
         }
         
         .content {
